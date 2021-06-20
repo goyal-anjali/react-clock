@@ -25,13 +25,14 @@ function App() {
     setInterval(() => {
       setTime(new Date().toLocaleTimeString());
     }, 1000);
-    if (date.getHours >= 12 && date.getHours < 16) {
+    
+    if (date.getHours() >= 12 && date.getHours() < 16) {
       greeting = "Good Afternoon ";
       color = "#FAF1E6";
-    } else if (date.getHours >= 16 && date.getHours <= 20) {
+    } else if (date.getHours() >= 16 && date.getHours() <= 20) {
       greeting = "Good Evening ";
       color = "#5E8B7E";
-    } else if (date.getHours >= 4 && date.getHours < 12) {
+    } else if (date.getHours() >= 4 && date.getHours() < 12) {
       greeting = "Good Morning ";
       color = "#F9DFDC";
     } else {
@@ -39,6 +40,7 @@ function App() {
       color = "black";
       document.querySelector("body").style.color = "white";
     }
+    
     document.querySelector("body").style.background = color;
     setTitle(greeting + name);
   }
